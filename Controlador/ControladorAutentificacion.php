@@ -19,8 +19,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $resultadoInsercion = $gestorAutenticacion->insertarUsuario($strNombre, $strApellidos, $strCorreo, $strContrasenia);
             
             if ($resultadoInsercion) {
-                //$arrResponse = array('status' => true, 'msg' => 'Usuario registrado correctamente', 'redirect' => '/index.php');
-                header("Location: ../index.php");
+                //$arrResponse = array('status' => true, 'msg' => 'Usuario registrado correctamente', 'redirect' => '/Vista/index.php');
+                header("Location: ../Vista/index.php");
 
             } else {
                 $arrResponse = array('status' => false, 'msg' => 'Error al registrar usuario');
@@ -46,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Devolver una respuesta JSON
         if ($resultadoAutenticacion) {
-            header("Location: ../index.php");
+            header("Location: ../Vista/index.php");
         } else {
             echo json_encode(array("success" => false, "message" => "Credenciales inválidas"));
         }

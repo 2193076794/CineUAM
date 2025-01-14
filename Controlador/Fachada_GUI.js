@@ -7,7 +7,7 @@ var GUIFachada = (function() {
 
     // Método público para cargar la página principal
     function CargarPaginaPrincipal() {
-        window.location.href = "../index.php";
+        window.location.href = "../Vista/index.php";
     }
 
     // Método público para cargar GUI sucursal
