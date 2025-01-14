@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $resultadoInsercion = $gestorAutenticacion->insertarUsuario($strNombre, $strApellidos, $strCorreo, $strContrasenia);
             
             if ($resultadoInsercion) {
-                //$arrResponse = array('status' => true, 'msg' => 'Usuario registrado correctamente', 'redirect' => '/Vista/index.php');
+                //$arrResponse = array('status' => true, 'msg' => 'Usuario registrado correctamente', 'redirect' => '/vista/index.php');
                 header("Location: ../Vista/index.php");
 
             } else {

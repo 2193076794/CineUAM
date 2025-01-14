@@ -17,7 +17,7 @@ class ControladorPago
     {
         self::$productos=$productos;
         self::$precio=$precio;
-        include_once ("..\Vista\GUIPago\FormularioPago.php");
+        include_once ("GUIPago/FormularioPago.php");
     }
 
     public static function procesarPago()
@@ -29,7 +29,7 @@ class ControladorPago
             try {
                 $pago = GestorPago::obtenerPago($metodoPago);
                 $resultado = $pago->pagar($cantidad);
-                require_once '..\Vista\GUIPago\PagoRealizado.php';
+                require_once 'C:\apache\htdocs\CineUam\Vista\GUIPago\PagoRealizado.php';
             } catch (\Exception $e) {
                 echo $e->getMessage();
             }
