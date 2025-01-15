@@ -1,5 +1,4 @@
 <?php
-    include ("../Controlador/ControladorCartelera.php");
 ?>
 
 <!DOCTYPE html>
@@ -101,6 +100,7 @@
         <h2 class="section_heading text-center mb-5">Cartelera</h2>
         <div class="row g-4">
             <?php
+            include_once '../Controlador/ControladorCartelera.php';
 
             // Instanciar el controlador de la cartelera
             $controladorCartelera = new ControladorCartelera();
