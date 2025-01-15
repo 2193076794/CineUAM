@@ -7,7 +7,7 @@ class ProxyCartelera {
         $this->conexion = new mysqli("localhost", "root", "123456", "cineuam");
 
         if ($this->conexion->connect_error) {
-            die("Error de conexión: " . $this->conexion->connect_error);
+            echo "Error de conexión: " . $this->conexion->connect_error;
         }
     }
     public static function obtenerProxy() {
