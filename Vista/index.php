@@ -6,7 +6,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script type='text/javascript' src='..\Controlador\Fachada_GUI.js'></script>
     <title>Cine UAM</title>
     <!--Bootstrap css -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
@@ -37,6 +36,9 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link mx-lg-2" href="#" onclick="GUIFachada.CargarPaginaSucursal()">Ubicacion</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link mx-lg-2" href="#" onclick="GUIFachada.CargarPaginaPreventa()">Preventas</a>
                 </li>
                 </ul>
             </div>
@@ -225,6 +227,7 @@
      <!--Bootstrap Js -->
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+     <script src="../Controlador/Fachada_GUI.js"></script>
     
     
 </body>

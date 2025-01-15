@@ -18,11 +18,11 @@ class ProxyCartelera {
     }
 
     public function obtenerFunciones() {
-        $query = "SELECT Funcion.IDFuncion, Pelicula.IDPelicula, Pelicula.Nombre, Pelicula.Sinopsis, Pelicula.Duración, Pelicula.ImagenPelicula, Pelicula.Genero, Pelicula.Estado, Sala.IDSala, Sala.IDSucursal, Sala.Asientos, Sala.Tipo, Horario.IDHorario, Horario.FechaHora
-                  FROM Funcion
-                  JOIN Pelicula ON Funcion.IDPelicula = Pelicula.IDPelicula
-                  JOIN Sala ON Funcion.IDSala = Sala.IDSala
-                  JOIN Horario ON Funcion.IDHorario = Horario.IDHorario";
+        $query = "SELECT funcion.IDFuncion, pelicula.IDPelicula, pelicula.Nombre, pelicula.Sinopsis, pelicula.Duración, pelicula.ImagenPelicula, pelicula.Genero, pelicula.Estado, sala.IDSala, sala.IDSucursal, sala.Asientos, sala.Tipo, horario.IDHorario, horario.FechaHora
+                  FROM funcion
+                  JOIN pelicula ON funcion.IDPelicula = pelicula.IDPelicula
+                  JOIN sala ON funcion.IDSala = sala.IDSala
+                  JOIN horario ON funcion.IDHorario = horario.IDHorario";
         $result = $this->conexion->query($query);
 
         if ($result->num_rows > 0) {

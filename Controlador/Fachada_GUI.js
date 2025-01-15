@@ -20,6 +20,11 @@ var GUIFachada = (function() {
         window.location.href = "../Vista/GUIAlimentos.php";
     }
 
+    // Método público para cargar GUI Preventa
+    function CargarPaginaPreventa() {
+        window.location.href = "../Vista/GUIPreventa.php";
+    }
+
     // Método público para cerrar sesión
     function cerrarSesion() {
         cargarPaginaLogin();
@@ -31,6 +36,7 @@ var GUIFachada = (function() {
         CargarPaginaPrincipal: CargarPaginaPrincipal,
         CargarPaginaSucursal: CargarPaginaSucursal,
         CargarPaginaAlimentos: CargarPaginaAlimentos,
+        CargarPaginaPreventa: CargarPaginaPreventa,
         cerrarSesion: cerrarSesion
     };
 })();

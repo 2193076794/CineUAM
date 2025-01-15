@@ -48,6 +48,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <li class="nav-item">
                 <a class="nav-link mx-lg-2 active" aria-current="page" href="#">Ubicacion</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link mx-lg-2" href="#" onclick="GUIFachada.CargarPaginaPreventa()">Preventas</a>
+            </li>
             </ul>
         </div>
         </div>
