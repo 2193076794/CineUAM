@@ -18,7 +18,7 @@ class ProxyCartelera {
     }
 
     public function obtenerFunciones() {
-        $query = "SELECT funcion.IDFuncion, pelicula.IDPelicula, pelicula.Nombre, pelicula.Sinopsis, pelicula.Duración, pelicula.ImagenPelicula, pelicula.Genero, pelicula.Estado, sala.IDSala, sala.IDSucursal, sala.Asientos, sala.Tipo, horario.IDHorario, horario.FechaHora
+        $query = "SELECT funcion.IDFuncion, pelicula.IDPelicula, pelicula.Nombre, pelicula.Sinopsis, pelicula.Duracin, pelicula.ImagenPelicula, pelicula.Genero, pelicula.Estado, sala.IDSala, sala.IDSucursal, sala.Asientos, sala.Tipo, horario.IDHorario, horario.FechaHora
                   FROM funcion
                   JOIN pelicula ON funcion.IDPelicula = pelicula.IDPelicula
                   JOIN sala ON funcion.IDSala = sala.IDSala
