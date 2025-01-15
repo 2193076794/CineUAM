@@ -100,12 +100,7 @@
         <h2 class="section_heading text-center mb-5">Cartelera</h2>
         <div class="row g-4">
             <?php
-            $incluir = include_once '../Controlador/ControladorCartelera.php';
-
-            if (!$incluir) {
-                echo "Error al incluir el controlador de la cartelera";
-                exit();
-            }
+            include_once '../Controlador/ControladorCartelera.php';
 
             // Instanciar el controlador de la cartelera
             $controladorCartelera = new ControladorCartelera();
