@@ -17,7 +17,7 @@ class ControladorCartelera {
         $funciones = [];
 
         foreach ($datos as $dato) {
-            $pelicula = new Pelicula($dato['IDPelicula'], $dato['Nombre'], $dato['Sinopsis'], $dato['Duracin'], $dato['ImagenPelicula'], $dato['Genero'],$dato['Estado']);
+            $pelicula = new Pelicula($dato['IDPelicula'], $dato['Nombre'], $dato['Sinopsis'], $dato['Duración'], $dato['ImagenPelicula'], $dato['Genero'],$dato['Estado']);
             $horario = new Horario($dato['IDHorario'], $dato['FechaHora']);
             $sala = new Sala($dato['IDSala'], $dato['IDSucursal'], $dato['Asientos'], $dato['Tipo']);
 

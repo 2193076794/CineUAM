@@ -5,7 +5,7 @@ $controladorPreventa = new ControladorPreventa();
 $peliculas = $controladorPreventa->obtenerPeliculas();
 $horarios = [];
 $sucursales = [];
-$seleccion = null;
+$seleccion = NULL;
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['pelicula'])) {
@@ -167,7 +167,7 @@ if ($seleccion) {
         <p><strong>Horario:</strong> <?= $horarioSeleccionado['FechaHora'] ?></p>
         <p><strong>Sucursal:</strong> <?= $sucursalSeleccionada['NombreZona'] ?></p>
         <hr>
-        <form action="../Vista/GUIPago/FormularioPago.php" method="POST">
+        <form action="../Vista/Boleto.php" method="POST">
             <input type="hidden" name="seleccion" value="<?= htmlspecialchars(json_encode($seleccion)) ?>">
             <button type="submit" class="btn btn-success">Proceder al Pago</button>
         </form>
@@ -194,8 +194,8 @@ if ($seleccion) {
                 </h2>
                 </div>
                 <p>
-                Disfruta de todos los alimentos y bebidas que tanto te encantan
-                para vivir al maximo tu experiencia en nuestras salas.
+                    Disfruta de todos los alimentos y bebidas que tanto te encantan
+                    para vivir al maximo tu experiencia en nuestras salas.
                 </p>
                 <a href="">
                 Comprar
