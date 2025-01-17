@@ -160,20 +160,20 @@ if ($seleccion) {
                     <button type="submit" class="btn btn-primary">Confirmar Selección</button>
                 <?php endif; ?>
             </form>
-        <?php else: ?>
-            <div class="alert alert-success shadow p-4 rounded" role="alert">
-        <h4 class="alert-heading">Selección confirmada</h4>
-        <p><strong>Película:</strong> <?= $peliculaSeleccionada['Nombre'] ?></p>
-        <p><strong>Horario:</strong> <?= $horarioSeleccionado['FechaHora'] ?></p>
-        <p><strong>Sucursal:</strong> <?= $sucursalSeleccionada['NombreZona'] ?></p>
-        <hr>
-        <form action="../Vista/Boleto.php" method="POST">
-            <input type="hidden" name="seleccion" value="<?= htmlspecialchars(json_encode($seleccion)) ?>">
-            <button type="submit" class="btn btn-success">Proceder al Pago</button>
-        </form>
-    </div>
-        <?php endif; ?>        
-    </div>
+            <?php else: ?>
+        <div class="alert alert-success shadow p-4 rounded" role="alert">
+            <h4 class="alert-heading">Selección confirmada</h4>
+            <p><strong>Película:</strong> <?= htmlspecialchars($peliculaSeleccionada['Nombre']) ?></p>
+            <p><strong>Horario:</strong> <?= htmlspecialchars($horarioSeleccionado['FechaHora']) ?></p>
+            <p><strong>Sucursal:</strong> <?= htmlspecialchars($sucursalSeleccionada['NombreZona']) ?></p>
+            <hr>
+            <form action="../Vista/Boleto.php" method="POST">
+                <input type="hidden" name="seleccion" value="<?= htmlspecialchars(serialize($seleccion)) ?>">
+                <button type="submit" class="btn btn-success">Proceder al Pago</button>
+            </form>
+        </div>
+    <?php endif; ?>        
+</div>
     <!--Fin Preventa -->
 
     <!-- about section -->

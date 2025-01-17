@@ -21,22 +21,22 @@ class ProxyBoleto {
     public function crearBoleto($IDPelicula, $Tipo, $Precio) {
         do {
             $IDBoleto = rand(1, 999999999); // Generar un ID aleatorio único
-            $query = "SELECT IDBoleto FROM Boletos WHERE IDBoleto = $IDBoleto";
+            $query = "SELECT IDBoleto FROM boleto WHERE IDBoleto = $IDBoleto";
             $result = $this->conexion->query($query);
         } while ($result->num_rows > 0);
 
-        $query = "INSERT INTO Boletos (IDBoleto, IDPelicula, Tipo, Precio) VALUES ($IDBoleto, $IDPelicula, '$Tipo', $Precio)";
+        $query = "INSERT INTO boleto (IDBoleto, IDPelicula, Tipo, Precio) VALUES ($IDBoleto, $IDPelicula, '$Tipo', $Precio)";
         $result = $this->conexion->query($query);
 
         if ($result) {
-            return "Boleto creado exitosamente.";
+            return $IDBoleto;
         } else {
             return "Error al crear el boleto: " . $this->conexion->error;
         }
     }
 
     public function obtenerBoleto($IDBoleto) {
-        $query = "SELECT * FROM Boletos WHERE IDBoleto = $IDBoleto";
+        $query = "SELECT * FROM boleto WHERE IDBoleto = $IDBoleto";
         $result = $this->conexion->query($query);
 
         if ($result->num_rows > 0) {

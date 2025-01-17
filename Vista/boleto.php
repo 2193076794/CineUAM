@@ -50,7 +50,52 @@
             </button>
         </div>
     </nav>
-    
+
+    <style>
+    .boleto-container {
+        margin-top: 80px; /* Deja espacio para el navbar */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: calc(100vh - 80px); /* Ajusta la altura para el espacio del navbar */
+    }
+    .boleto {
+        border: 2px dashed #333;
+        padding: 20px;
+        width: 300px;
+        background-color: #f9f9f9;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+    .boleto h2 {
+        margin-bottom: 20px;
+    }
+    .boleto p {
+        margin: 5px 0;
+    }
+</style>
+
+<div class="boleto-container">
+    <?php
+    include_once "../Controlador/ControladorBoleto.php";
+    $seleccion = unserialize($_POST['seleccion']);
+    $controladorBoleto = new ControladorBoleto($seleccion['pelicula']);
+    $IDBoleto = $controladorBoleto->mostrarIDBoleto();
+    $IDPelicula = $seleccion['pelicula'];
+    $horario = $seleccion['horario'];
+    $sucursal = $seleccion['sucursal'];
+    ?>
+    <div class="boleto">
+        <h2>Boleto</h2>
+        <h3>CineUAM</h3>
+        <p><strong>ID Boleto:</strong> <?php echo htmlspecialchars($IDBoleto); ?></p>
+        <p><strong>ID Película:</strong> <?php echo htmlspecialchars($IDPelicula); ?></p>
+        <p><strong>Horario:</strong> <?php echo htmlspecialchars($horario); ?></p>
+        <p><strong>Sucursal:</strong> <?php echo htmlspecialchars($sucursal); ?></p>
+        <p><strong>¡Gracias por tu compra!</strong></p>
+
+    </div>
+</div>
 
   <!-- end about section -->
     <!-- Footer -->
